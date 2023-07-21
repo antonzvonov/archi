@@ -31,7 +31,7 @@
       <key
             commandId="com.archimatetool.zest.action.showZestView"
             schemeId="com.archimatetool.editor.keybindings"
-            sequence="M3+6">
+            sequence="M3+SHIFT+6">
       </key>
    </extension>
    <extension

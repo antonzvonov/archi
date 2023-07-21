@@ -86,7 +86,7 @@
       <key
             commandId="com.archimatetool.hammer.command.showValidatorView"
             schemeId="com.archimatetool.editor.keybindings"
-            sequence="M3+8">
+            sequence="M3+SHIFT+8">
       </key>
    </extension>
    <extension

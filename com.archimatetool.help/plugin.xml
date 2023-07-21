@@ -134,7 +134,7 @@
       <key
             commandId="com.archimatetool.help.command.showHintsView"
             schemeId="com.archimatetool.editor.keybindings"
-            sequence="M3+7">
+            sequence="M3+SHIFT+7">
       </key>
    </extension>
    <extension

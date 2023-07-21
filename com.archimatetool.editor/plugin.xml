@@ -614,27 +614,27 @@
       <key
             commandId="com.archimatetool.editor.action.showTreeModelView"
             schemeId="com.archimatetool.editor.keybindings"
-            sequence="M3+1">
+            sequence="M3+SHIFT+1">
       </key>
       <key
             commandId="com.archimatetool.editor.action.showPropertiesView"
             schemeId="com.archimatetool.editor.keybindings"
-            sequence="M3+2">
+            sequence="M3+SHIFT+2">
       </key>
       <key
             commandId="com.archimatetool.editor.action.showOutlineView"
             schemeId="com.archimatetool.editor.keybindings"
-            sequence="M3+3">
+            sequence="M3+SHIFT+3">
       </key>
       <key
             commandId="com.archimatetool.editor.action.showNavigatorView"
             schemeId="com.archimatetool.editor.keybindings"
-            sequence="M3+4">
+            sequence="M3+SHIFT+4">
       </key>
       <key
             commandId="com.archimatetool.editor.action.showPaletteView"
             schemeId="com.archimatetool.editor.keybindings"
-            sequence="M3+5">
+            sequence="M3+SHIFT+5">
       </key>
       <key
             commandId="com.archimatetool.editor.action.exportAsImageToClipboard"
