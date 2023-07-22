@@ -116,6 +116,7 @@ implements ITreeModelView, IUIRequestListener {
     private IAction fActionFindReplace;
     private IAction fActionCollapseSelected;
     private IAction fActionExpandSelected;
+    private IAction fActionCollapseAll;
     
     private IViewerAction fActionProperties;
     private IViewerAction fActionSaveModel;
@@ -399,6 +400,17 @@ implements ITreeModelView, IUIRequestListener {
                 return IArchiImages.ImageFactory.getImageDescriptor(IArchiImages.ICON_EXPANDALL);
             }
         };
+        fActionCollapseAll = new Action(Messages.TreeModelView_6) {
+            @Override
+            public void run() {
+            	fTreeViewer.collapseAll();                
+            }
+            
+            @Override
+            public ImageDescriptor getImageDescriptor() {
+                return IArchiImages.ImageFactory.getImageDescriptor(IArchiImages.ICON_COLLAPSEALL);
+            }
+        };
     }
     
     /**
@@ -570,6 +582,7 @@ implements ITreeModelView, IUIRequestListener {
         manager.add(new Separator());
         
         manager.add(fActionToggleSearchField);
+        manager.add(fActionCollapseAll);
         manager.add(fActionLinkToEditor);
     }
     
@@ -739,6 +752,7 @@ implements ITreeModelView, IUIRequestListener {
         fActionCloseModel = null;
         fActionSaveModel = null;
         fActionDelete = null;
+        fActionCollapseAll = null;
         
         // Clear Cut/Paste clipboard
         TreeModelCutAndPaste.INSTANCE.clear();
