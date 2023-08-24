@@ -67,6 +67,7 @@ import com.archimatetool.editor.ui.services.ViewManager;
 import com.archimatetool.editor.utils.StringUtils;
 import com.archimatetool.editor.views.AbstractModelView;
 import com.archimatetool.editor.views.tree.actions.CloseModelAction;
+import com.archimatetool.editor.views.tree.actions.CopyDiagramIdAction;
 import com.archimatetool.editor.views.tree.actions.CutAction;
 import com.archimatetool.editor.views.tree.actions.DeleteAction;
 import com.archimatetool.editor.views.tree.actions.DuplicateAction;
@@ -80,6 +81,7 @@ import com.archimatetool.editor.views.tree.actions.PropertiesAction;
 import com.archimatetool.editor.views.tree.actions.RenameAction;
 import com.archimatetool.editor.views.tree.actions.SaveModelAction;
 import com.archimatetool.editor.views.tree.commands.DuplicateCommandHandler;
+import com.archimatetool.editor.views.tree.commands.RenameCommandHandler;
 import com.archimatetool.editor.views.tree.search.SearchFilter;
 import com.archimatetool.editor.views.tree.search.SearchWidget;
 import com.archimatetool.model.FolderType;
@@ -117,6 +119,7 @@ implements ITreeModelView, IUIRequestListener {
     private IAction fActionCollapseSelected;
     private IAction fActionExpandSelected;
     private IAction fActionCollapseAll;
+    private IViewerAction fCopyDiagramId;
     
     private IViewerAction fActionProperties;
     private IViewerAction fActionSaveModel;
@@ -411,6 +414,7 @@ implements ITreeModelView, IUIRequestListener {
                 return IArchiImages.ImageFactory.getImageDescriptor(IArchiImages.ICON_COLLAPSEALL);
             }
         };
+        fCopyDiagramId = new CopyDiagramIdAction(getViewer());        
     }
     
     /**
@@ -494,7 +498,8 @@ implements ITreeModelView, IUIRequestListener {
         // Selected a Diagram
         if(selected instanceof IDiagramModel) {
             manager.add(fActionOpenDiagram);
-            manager.add(new Separator("open")); //$NON-NLS-1$
+            manager.add(fCopyDiagramId);
+            manager.add(new Separator("open")); //$NON-NLS-1$            
         }
         
         if(!isEmpty) {
